@@ -9,7 +9,7 @@ CREATE TABLE `dbc_amenities` (
 `status` int NOT NULL DEFAULT '1',
 -- SPRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT
-\
+
 LOCK TABLES `dbc_amenities` WRITE;
 INSERT INTO `dbc_amenities` VALUES (1,5,'Pathalogy',1),(2,5,'X-Ray',1);
 UNLOCK TABLES;
