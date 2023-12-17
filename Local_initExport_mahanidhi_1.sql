@@ -7,7 +7,7 @@ CREATE TABLE `dbc_amenities` (
 `category_id` int DEFAULT '0',
 `options` text  ,
 `status` int NOT NULL DEFAULT '1',
--- SPRIMARY KEY (`id`)
+PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT
 
 LOCK TABLES `dbc_amenities` WRITE;
