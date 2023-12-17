@@ -1,4 +1,6 @@
 
+
+use mahanidhi_db;
 --
 -- Table structure for table `dbc_amenities`
 --
