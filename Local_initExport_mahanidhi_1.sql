@@ -161,6 +161,29 @@ INSERT INTO `dbc_emailtmpl` VALUES (1,'confirmation_email','{\"subject\":\"Confi
 
 
 --
+-- Table structure for table `dbc_featuredproductsimage`
+--
+
+DROP TABLE IF EXISTS `dbc_featuredproductsimage`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `dbc_featuredproductsimage` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `Image` mediumtext,
+  `create_time` datetime DEFAULT NULL,
+  `created_by` int DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dbc_featuredproductsimage`
+--
+
+/*!40000 ALTER TABLE `dbc_featuredproductsimage` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dbc_featuredproductsimage` ENABLE KEYS */;
+
+--
 -- Table structure for table `dbc_featuredproducts`
 --
 
@@ -190,28 +213,6 @@ CREATE TABLE `dbc_featuredproducts` (
 
 
 
---
--- Table structure for table `dbc_featuredproductsimage`
---
-
-DROP TABLE IF EXISTS `dbc_featuredproductsimage`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `dbc_featuredproductsimage` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Image` mediumtext,
-  `create_time` datetime DEFAULT NULL,
-  `created_by` int DEFAULT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dbc_featuredproductsimage`
---
-
-/*!40000 ALTER TABLE `dbc_featuredproductsimage` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dbc_featuredproductsimage` ENABLE KEYS */;
 
 
 --
@@ -682,11 +683,11 @@ CREATE TABLE `dbc_users` (
   `recovery_key` char(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL DEFAULT '',
   `confirmation_key` char(30) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL DEFAULT '',
   `confirmed` int NOT NULL DEFAULT '1',
-  `confirmed_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `confirmed_date` datetime NULL,
   `status` int NOT NULL DEFAULT '0',
   `banned` int NOT NULL DEFAULT '0',
-  `banned_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `banned_till` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `banned_date` datetime NULL,
+  `banned_till` datetime NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -696,7 +697,7 @@ CREATE TABLE `dbc_users` (
 --
 
 /*!40000 ALTER TABLE `dbc_users` DISABLE KEYS */;
-INSERT INTO `dbc_users` VALUES (1,1,'Admin','Admin','male','nophoto-male.jpg','admin','admin@gmail.com','$2a$11$P4SQXCwK9V6L8e061Ibdd.02khZXNbB/1.K7pjQ63q26wOA2z2Ab2','','657061f3c1f2b','',1,'0000-00-00 00:00:00',1,0,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(2,2,'ram','raja','male','','rajarani','raja@rani.com','$2a$11$hfTUYaG/O7x.a06Zw20XKuuWulmRLhWR1PCTOC5u9nLhex3Uw65U.','','','65696fa6f194a',0,'0000-00-00 00:00:00',1,0,'0000-00-00 00:00:00','0000-00-00 00:00:00'),(3,2,'Niranjan123','Imalla23','male','','niranjan','niranjan.Imalla@gmail.com','$2a$11$Kawm3s24Flx6zsyLcxk3e.T2zcOq7cJeEczzghxc8EjAxrwYB2zpS','','','656dbccebab42',0,'0000-00-00 00:00:00',1,0,'0000-00-00 00:00:00','0000-00-00 00:00:00');
+
 /*!40000 ALTER TABLE `dbc_users` ENABLE KEYS */;
 
 --
@@ -747,14 +748,9 @@ CREATE TABLE `dbc_widgets` (
 /*!40000 ALTER TABLE `dbc_widgets` DISABLE KEYS */;
 INSERT INTO `dbc_widgets` VALUES (1,'Facebook like box','fb_likebox','',1,1),(2,'Contact text','contact_text','',1,1),(3,'Follow us','follow_us','',1,1),(4,'Short Description','short_description','',1,1),(5,'Adsense full width','adsense_full_width','',1,1),(6,'Adsense Sidebar','adsense_sidebar','',1,1),(7,'Plain Search Widget','plain_search_widget','',1,1),(8,'Adv Search Widget','advance_search_widget','',1,1),(9,'Recent Posts Main','recent_posts_main','',1,1),(10,'Category Main','category_main','',1,1),(11,'Top Bar','top_bar',NULL,1,1),(12,'Top Bar Social','top_bar_social',NULL,1,1),(13,'Footer Links','footer_links',NULL,1,1),(14,'Top Posts','top_posts',NULL,1,1),(15,'Category Counter','category_counter',NULL,1,1),(16,'Tag Cloud','tag_cloud',NULL,1,1),(17,'Recent Post','recent_post',NULL,1,1),(18,'Category Featured Post','category_featured_post',NULL,1,1),(19,'Category Sidebar','category_sidebar',NULL,1,1),(20,'Social Media Cloud','social_media_cloud',NULL,1,1),(21,'Featured Posts Main','featured_posts_main',NULL,1,1),(22,'Top Locations Home','top_locations_home',NULL,1,1),(23,'Featured Post','featured_post',NULL,1,1),(24,'Top Locations Sidebar','top_locations_sidebar',NULL,1,1),(25,'Top Users','top_users',NULL,1,1),(26,'Login Page Description','login_page_description',NULL,1,1),(27,'Register Page Description','register_page_description',NULL,1,1),(28,'Blog post','blog_post',NULL,1,1),(29,'Article post','article_post',NULL,1,1),(30,'News post','news_post',NULL,1,1),(31,'Category main with subcategories','category_main_with_subcategories',NULL,1,1),(32,'Newsletter sidebar','newsletter_sidebar',NULL,1,1),(33,'Similar Post','similar_post',NULL,1,1);
 /*!40000 ALTER TABLE `dbc_widgets` ENABLE KEYS */;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2023-12-17 13:52:08
+
+
+
