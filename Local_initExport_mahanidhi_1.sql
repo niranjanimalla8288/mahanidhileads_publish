@@ -8,6 +8,6 @@ CREATE TABLE `dbc_amenities` (
 `options` text  ,
 `status` int NOT NULL DEFAULT '1',
 PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT
+);
 
 
