@@ -1,34 +1,21 @@
 use mahanidhi_db;
 
 DROP TABLE IF EXISTS `dbc_amenities`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE `dbc_amenities` (
 `id` int NOT NULL AUTO_INCREMENT,
 `category_id` int DEFAULT '0',
 `options` text  ,
 `status` int NOT NULL DEFAULT '1',
-PRIMARY KEY (`id`)
+-- SPRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dbc_amenities`
---
-
+\
 LOCK TABLES `dbc_amenities` WRITE;
-/*!40000 ALTER TABLE `dbc_amenities` DISABLE KEYS */;
 INSERT INTO `dbc_amenities` VALUES (1,5,'Pathalogy',1),(2,5,'X-Ray',1);
-/*!40000 ALTER TABLE `dbc_amenities` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `dbc_blog`
---
 
 DROP TABLE IF EXISTS `dbc_blog`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_blog` (
 `id` int NOT NULL AUTO_INCREMENT,
 `type` char(30) NOT NULL,
@@ -40,24 +27,12 @@ CREATE TABLE `dbc_blog` (
 `status` int NOT NULL DEFAULT '1',
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dbc_blog`
---
 
 LOCK TABLES `dbc_blog` WRITE;
-/*!40000 ALTER TABLE `dbc_blog` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dbc_blog` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `dbc_blog_meta`
---
 
 DROP TABLE IF EXISTS `dbc_blog_meta`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_blog_meta` (
 `id` int NOT NULL AUTO_INCREMENT,
 `blog_id` int NOT NULL,
@@ -66,24 +41,11 @@ CREATE TABLE `dbc_blog_meta` (
 `status` int NOT NULL DEFAULT '1',
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dbc_blog_meta`
---
 
 LOCK TABLES `dbc_blog_meta` WRITE;
-/*!40000 ALTER TABLE `dbc_blog_meta` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dbc_blog_meta` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `dbc_categories`
---
-
 DROP TABLE IF EXISTS `dbc_categories`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_categories` (
 `id` int NOT NULL AUTO_INCREMENT,
 `parent` int NOT NULL DEFAULT '0',
@@ -96,28 +58,17 @@ CREATE TABLE `dbc_categories` (
 `status` int NOT NULL,
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `dbc_categories`
---
 
 LOCK TABLES `dbc_categories` WRITE;
-/*!40000 ALTER TABLE `dbc_categories` DISABLE KEYS */;
 INSERT INTO `dbc_categories` VALUES (1,0,'Real Estate','fa-home','hm.jpg',0,1,1701242746,1),(2,0,'Infra
 Developers','fa-user','hm1.jpg',0,1,1701246823,1),(3,0,'Groceries','fa-car','hm3.jpg',0,1,1701247639,1),(4,0,'Hospitals','fa-home','PanCard_back.jpeg',0,1,1701685392,1),(5,0,'Children
 Hospitals','fa-home','TechyTrainEstimates_v1_0.JPG',0,1,1701862339,1),(6,0,'Electronics','fa-home','TechyTrainEstimates_v1_02.JPG',0,1,1702535967,1),(7,0,'Gaming
 Toys','fa-user','TechyTrainEstimates_v1_04.JPG',0,1,1702639947,1);
-/*!40000 ALTER TABLE `dbc_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `dbc_customfields`
---
 
 DROP TABLE IF EXISTS `dbc_customfields`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_customfields` (
 `id` int NOT NULL AUTO_INCREMENT,
 `category_id` int DEFAULT '0',
@@ -133,15 +84,9 @@ CREATE TABLE `dbc_customfields` (
 `status` int NOT NULL DEFAULT '1',
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dbc_customfields`
---
+ 
 
 LOCK TABLES `dbc_customfields` WRITE;
-/*!40000 ALTER TABLE `dbc_customfields` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dbc_customfields` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -149,8 +94,6 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `dbc_emailtmpl`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_emailtmpl` (
 `id` int NOT NULL AUTO_INCREMENT,
 `email_name` char(100)  NOT NULL,
@@ -158,14 +101,12 @@ CREATE TABLE `dbc_emailtmpl` (
 `status` int NOT NULL,
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `dbc_emailtmpl`
 --
 
 LOCK TABLES `dbc_emailtmpl` WRITE;
-/*!40000 ALTER TABLE `dbc_emailtmpl` DISABLE KEYS */;
 INSERT INTO `dbc_emailtmpl` VALUES (1,'confirmation_email','{\"subject\":\"Confirmation email\",\"body\":\"Hi
 #username,\\r\\nYour signup is successful. Please follow the below link for activating your account:\\r\\n
 \\r\\n#activationlink\\r\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\r\\nThanks\\r\\n#webadmin\",\"avl_vars\":\"#username,#useremail,#activationlink,#webadmin\"}',1),(2,'recovery_email','{\"subject\":\"Recovery
@@ -179,7 +120,6 @@ expiration notification\",\"body\":\"Dear user \\r\\nOne or more of your posts a
 \\r\\n\\r\\n#all_posts_link\\r\\n\\r\\nThanks\\r\\n#webadmin\",\"avl_vars\":\"#no_of_days,#all_posts_link,#webadmin\"}',1),(5,'post_published_email','{\"subject\":\"Post
 approval notification\",\"body\":\"Dear #username \\r\\nYour post has been
 published\\r\\n\\r\\n#post_link\\r\\n\\r\\nThanks\\r\\n#webadmin\",\"avl_vars\":\"#username,#post_link,#webadmin\"}',1);
-/*!40000 ALTER TABLE `dbc_emailtmpl` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -187,8 +127,6 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `dbc_featuredproducts`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_featuredproducts` (
 `Id` int NOT NULL AUTO_INCREMENT,
 `FP_Title` varchar(30) DEFAULT NULL,
@@ -201,15 +139,12 @@ PRIMARY KEY (`Id`),
 KEY `FP_ImageId` (`FP_ImageId`),
 CONSTRAINT `dbc_featuredproducts_ibfk_1` FOREIGN KEY (`FP_ImageId`) REFERENCES `dbc_featuredproductsimage` (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `dbc_featuredproducts`
 --
 
 LOCK TABLES `dbc_featuredproducts` WRITE;
-/*!40000 ALTER TABLE `dbc_featuredproducts` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dbc_featuredproducts` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -217,8 +152,6 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `dbc_featuredproductsimage`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_featuredproductsimage` (
 `Id` int NOT NULL AUTO_INCREMENT,
 `Image` mediumtext,
@@ -226,15 +159,12 @@ CREATE TABLE `dbc_featuredproductsimage` (
 `created_by` int DEFAULT NULL,
 PRIMARY KEY (`Id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `dbc_featuredproductsimage`
 --
 
 LOCK TABLES `dbc_featuredproductsimage` WRITE;
-/*!40000 ALTER TABLE `dbc_featuredproductsimage` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dbc_featuredproductsimage` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -242,8 +172,6 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `dbc_locations`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_locations` (
 `id` int NOT NULL AUTO_INCREMENT,
 `parent` int NOT NULL,
@@ -254,17 +182,14 @@ CREATE TABLE `dbc_locations` (
 `photo` char(200)  NOT NULL,
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `dbc_locations`
 --
 
 LOCK TABLES `dbc_locations` WRITE;
-/*!40000 ALTER TABLE `dbc_locations` DISABLE KEYS */;
 INSERT INTO `dbc_locations` VALUES
 (1,0,0,'India','country',1,''),(2,1,1,'telangana','state',1,''),(3,2,1,'Hyderbad','city',1,''),(4,2,1,'Nijamabad','city',1,'');
-/*!40000 ALTER TABLE `dbc_locations` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -272,8 +197,6 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `dbc_media`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_media` (
 `id` int NOT NULL AUTO_INCREMENT,
 `media_name` char(255)  NOT NULL,
@@ -283,15 +206,12 @@ CREATE TABLE `dbc_media` (
 `status` int NOT NULL,
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `dbc_media`
 --
 
 LOCK TABLES `dbc_media` WRITE;
-/*!40000 ALTER TABLE `dbc_media` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dbc_media` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -299,8 +219,6 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `dbc_messaging`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_messaging` (
 `id` int NOT NULL AUTO_INCREMENT,
 `sender` int NOT NULL,
@@ -311,15 +229,12 @@ CREATE TABLE `dbc_messaging` (
 `content` longtext  ,
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `dbc_messaging`
 --
 
 LOCK TABLES `dbc_messaging` WRITE;
-/*!40000 ALTER TABLE `dbc_messaging` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dbc_messaging` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -327,8 +242,6 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `dbc_offers`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_offers` (
 `id` int NOT NULL AUTO_INCREMENT,
 `post_id` int NOT NULL,
@@ -345,15 +258,12 @@ CREATE TABLE `dbc_offers` (
 `status` int NOT NULL,
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `dbc_offers`
 --
 
 LOCK TABLES `dbc_offers` WRITE;
-/*!40000 ALTER TABLE `dbc_offers` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dbc_offers` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -361,8 +271,6 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `dbc_options`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_options` (
 `id` int NOT NULL AUTO_INCREMENT,
 `key` char(255)  NOT NULL,
@@ -370,14 +278,12 @@ CREATE TABLE `dbc_options` (
 `status` int NOT NULL DEFAULT '1',
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `dbc_options`
 --
 
 LOCK TABLES `dbc_options` WRITE;
-/*!40000 ALTER TABLE `dbc_options` DISABLE KEYS */;
 INSERT INTO `dbc_options` VALUES (1,'site_settings','{\"site_title\":\"Mahanidhi\",\"footer_text\":\"Mahanidhi 2023, all
 rights
 reserved\",\"site_logo\":\"IMG_20231215_1728471.jpg\",\"logo_text\":\"Mahanidhi\",\"logo_text_color\":\"#ffffff\",\"logo_type\":\"Image\",\"logo_type_rules\":\"required\",\"admin_logo\":\"IMG_20231215_172847.jpg\",\"enable_watermarking\":\"Yes\",\"enable_watermarking_rules\":\"required\",\"wm_featured_photo\":\"1\",\"wm_gallery_photo\":\"1\",\"wm_article_photo\":\"1\",\"watermark_stamp\":\"stamp.png\",\"site_lang\":\"en\",\"site_direction\":\"ltr\",\"site_direction_rules\":\"required\",\"per_page\":\"10\",\"default_layout\":\"1\",\"site_mode\":\"production\",\"ga_tracking_code\":\"\",\"code_before_head\":\"\",\"meta_description\":\"business
@@ -395,7 +301,6 @@ are your payment options\\r\\n\\r\\nUPI Details : \\r\\nMobile : 7093135710\\r\\
 2546254152\\r\\nBank Name : State Bank of India\\r\\nIFSC: SBI00002541\\r\\n\\r\\nInstructions: Please keep your payment
 reference number safe and share it with admin through : mahaanidhi2023@gmail.com
 \\r\\n\",\"bank_transfer_instruction_for_featured_posts_rules\":\"required\",\"bank_currency\":\"INR\",\"bank_currency_rules\":\"required\"}',1),(13,'migrate_1_3','yes',1),(14,'last_expiration_cron_date','2023-12-16',1),(15,'enable_url_rewriting','yes',1),(16,'migrate_2_6','yes',1),(17,'email_subscribers','[\"janedoe@yahoo.com\"]',1);
-/*!40000 ALTER TABLE `dbc_options` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -403,8 +308,6 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `dbc_packages`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_packages` (
 `id` int NOT NULL AUTO_INCREMENT,
 `type` char(20)  NOT NULL DEFAULT 'post_package',
@@ -417,14 +320,12 @@ CREATE TABLE `dbc_packages` (
 `status` int NOT NULL DEFAULT '1',
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `dbc_packages`
 --
 
 LOCK TABLES `dbc_packages` WRITE;
-/*!40000 ALTER TABLE `dbc_packages` DISABLE KEYS */;
 INSERT INTO `dbc_packages` VALUES (1,'featured_package','Free','Free for 15
 days',0.00,15,0,5,0),(2,'post_package','Normal','',10.00,60,0,5,0),(3,'post_package','Free','Free for 30
 days',0.00,30,0,5,0),(4,'featured_package','Ultimate','Featured for 60 days',5.00,60,0,5,0),(5,'post_package','Gold
@@ -436,7 +337,6 @@ Mails\r\n3000 Watsapp Notifications ',4000.00,365,0,15,1),(8,'post_package','MPL
 Professional Leads Package 4\r\nTop 26 to 50\r\n2000 SMS and Mails\r\n1000 Watsapp Notifications
 ',2000.00,365,0,5,1),(10,'post_package','MPL5','My Professional Leads Package 5\r\nTop 51 and above\r\n1000 SMS and
 Mails\r\n500 Watsapp Notifications ',1000.00,365,0,3,1);
-/*!40000 ALTER TABLE `dbc_packages` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -444,8 +344,6 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `dbc_pages`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_pages` (
 `id` int NOT NULL AUTO_INCREMENT,
 `alias` char(50)  NOT NULL,
@@ -465,14 +363,12 @@ PRIMARY KEY (`id`),
 UNIQUE KEY `alias` (`alias`),
 UNIQUE KEY `alias_2` (`alias`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `dbc_pages`
 --
 
 LOCK TABLES `dbc_pages` WRITE;
-/*!40000 ALTER TABLE `dbc_pages` DISABLE KEYS */;
 INSERT INTO `dbc_pages` VALUES (1,'home',1,1,'Url','home','','','','{\"meta_description\":\"classified buy sell. real
 estates electronics pets vehicles matrimonial jobs community services fashion search and post your ad Top Featured Posts
 categories\",\"key_words\":\"sale,rent,buy,classified,cms,whiz,electronics,real
@@ -586,7 +482,6 @@ country\",\"crawl_after\":\"3\"}',2147483647,1,1,0),(12,'terms_and_conditions',1
 policy\",\"key_words\":\"cookie,policy\",\"crawl_after\":\"3\"}',1476443264,1,1,0),(16,'all_offers',1,0,'Url','all_offers','show/all_offers','','','{\"meta_description\":\"\",\"key_words\":\"\",\"crawl_after\":\"\"}',1601539391,1,1,NULL),(17,'pricing',1,0,'Url','pricing','pricing','','','{\"meta_description\":\"\",\"key_words\":\"\",\"crawl_after\":\"\"}',1601980620,1,1,NULL),(18,'termsandconditions',0,0,'Url','Terms
 and Conditions','termsandconditions','<div><br></div>','<div><br></div>
 ','{\"meta_description\":\"\",\"key_words\":\"\",\"crawl_after\":\"\"}',1702645494,1,1,NULL);
-/*!40000 ALTER TABLE `dbc_pages` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -594,8 +489,6 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `dbc_post_meta`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_post_meta` (
 `id` int NOT NULL AUTO_INCREMENT,
 `post_id` int NOT NULL,
@@ -604,17 +497,14 @@ CREATE TABLE `dbc_post_meta` (
 `status` int NOT NULL DEFAULT '1',
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `dbc_post_meta`
 --
 
 LOCK TABLES `dbc_post_meta` WRITE;
-/*!40000 ALTER TABLE `dbc_post_meta` DISABLE KEYS */;
 INSERT INTO `dbc_post_meta` VALUES
 (1,1,'hide_my_phone',NULL,1),(2,1,'camera_spin','0',1),(3,1,'hide_my_email',NULL,1),(4,1,'disable_email_contact',NULL,1),(5,1,'disable_google_street_view',NULL,1),(6,1,'enable_messaging_user',NULL,1),(7,1,'verified','1',1),(8,2,'hide_my_phone',NULL,1),(9,2,'camera_spin','0',1),(10,2,'hide_my_email',NULL,1),(11,2,'disable_email_contact',NULL,1),(12,2,'disable_google_street_view','1',1),(13,2,'enable_messaging_user',NULL,1),(14,2,'custom_data','[]',1),(15,2,'amenities','[]',1),(16,2,'facebook_profile','',1),(17,2,'twitter_profile','',1),(18,2,'linkedin_profile','',1),(19,2,'pinterest_profile','',1),(20,2,'googleplus_profile','',1),(21,2,'instagram_profile','',1),(22,2,'business_logo','no-image.png',1),(23,2,'always_open',NULL,1),(24,3,'hide_my_phone',NULL,1),(25,3,'camera_spin','0',1),(26,3,'hide_my_email',NULL,1),(27,3,'disable_email_contact',NULL,1),(28,3,'disable_google_street_view',NULL,1),(29,3,'enable_messaging_user',NULL,1),(30,4,'hide_my_phone',NULL,1),(31,4,'camera_spin','0',1),(32,4,'hide_my_email',NULL,1),(33,4,'disable_email_contact',NULL,1),(34,4,'disable_google_street_view',NULL,1),(35,4,'enable_messaging_user',NULL,1),(36,4,'verified','1',1),(37,5,'hide_my_phone',NULL,1),(38,5,'camera_spin','0',1),(39,5,'hide_my_email',NULL,1),(40,5,'disable_email_contact',NULL,1),(41,5,'disable_google_street_view',NULL,1),(42,5,'enable_messaging_user','1',1),(43,6,'hide_my_phone',NULL,1),(44,6,'camera_spin','0',1),(45,6,'hide_my_email',NULL,1),(46,6,'disable_email_contact',NULL,1),(47,6,'disable_google_street_view',NULL,1),(48,6,'enable_messaging_user',NULL,1);
-/*!40000 ALTER TABLE `dbc_post_meta` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -622,8 +512,6 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `dbc_post_package`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_post_package` (
 `id` int NOT NULL AUTO_INCREMENT,
 `unique_id` char(100) NOT NULL,
@@ -641,14 +529,12 @@ CREATE TABLE `dbc_post_package` (
 PRIMARY KEY (`id`),
 UNIQUE KEY `unique_id` (`unique_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `dbc_post_package`
 --
 
 LOCK TABLES `dbc_post_package` WRITE;
-/*!40000 ALTER TABLE `dbc_post_package` DISABLE KEYS */;
 INSERT INTO `dbc_post_package` VALUES
 (1,'6566f876c3a0f',1,2,10.00,'2023-11-29','2023-11-29','2024-01-28',1,1,'paypal','post','Approved by
 admin'),(2,'656daa2a0eb9b',2,5,500.00,'2023-12-04','2023-12-04','2024-02-02',1,1,'paypal','post','Approved by
@@ -656,7 +542,6 @@ admin'),(3,'65705c7f6770c',3,2,10.00,'2023-12-06','2023-12-06','2024-02-04',1,1,
 admin'),(4,'657aa36a71f35',4,2,10.00,'2023-12-14','2023-12-14','2024-02-12',1,1,'paypal','post','Approved by
 admin'),(5,'657c45b9926d5',5,10,1000.00,'2023-12-15','2023-12-15','2024-12-14',1,1,'paypal','post','Approved by
 admin'),(6,'657c4778217ef',6,10,1000.00,'2023-12-15',NULL,NULL,2,1,'paypal','post',NULL);
-/*!40000 ALTER TABLE `dbc_post_package` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -664,8 +549,6 @@ UNLOCK TABLES;
 --
 
 DROP TABLE IF EXISTS `dbc_posts`;
-/*!40101 SET @saved_cs_client = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_posts` (
 `id` int NOT NULL AUTO_INCREMENT,
 `unique_id` char(100)  NOT NULL,
@@ -708,14 +591,12 @@ CREATE TABLE `dbc_posts` (
 PRIMARY KEY (`id`),
 UNIQUE KEY `unique_id` (`unique_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Dumping data for table `dbc_posts`
 --
 
 LOCK TABLES `dbc_posts` WRITE;
-/*!40000 ALTER TABLE `dbc_posts` DISABLE KEYS */;
 INSERT INTO `dbc_posts` VALUES (1,'6566f876a895e','{\"en\":\"Top Infra
 Company\",\"ar\":\"\",\"pt\":\"\",\"es\":\"\"}','{\"en\":\"Top Infra Company \",\"ar\":\" \",\"pt\":\" \",\"es\":\"
 \"}','infra, developers, real estae\r\n',0.0,'[\"1\"]','[\"1\"]','100-200','{\"en\":\"Suraram
@@ -752,7 +633,6 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         Company&lt;br&gt;&lt;\\/div&gt;\"}','Some Good Toy
         Company',0.0,'[\"1\"]','[\"1\"]','100-200','{\"en\":\"2345h\"}','1234512345','www.xyz.com','2012','niranjan.exp@gmail.com',1,2,3,'500023',17.63000000,78.63000000,'',NULL,NULL,NULL,NULL,NULL,1,1702643576,1702643576,1702643576,3,NULL,NULL,0,NULL,0,0,'Real
         Estate Real Estate 2012 India telangana Hyderbad 500023 Some Good Toy Company 2345h Some Good Toy Company ');
-        /*!40000 ALTER TABLE `dbc_posts` ENABLE KEYS */;
         UNLOCK TABLES;
 
         --
@@ -760,8 +640,6 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         --
 
         DROP TABLE IF EXISTS `dbc_review`;
-        /*!40101 SET @saved_cs_client = @@character_set_client */;
-        /*!50503 SET character_set_client = utf8mb4 */;
         CREATE TABLE `dbc_review` (
         `id` int NOT NULL AUTO_INCREMENT,
         `comment` text  ,
@@ -772,15 +650,12 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         `status` tinyint(1) NOT NULL DEFAULT '1',
         PRIMARY KEY (`id`)
         ) ENGINE=InnoDB DEFAULT
-        /*!40101 SET character_set_client = @saved_cs_client */;
 
         --
         -- Dumping data for table `dbc_review`
         --
 
         LOCK TABLES `dbc_review` WRITE;
-        /*!40000 ALTER TABLE `dbc_review` DISABLE KEYS */;
-        /*!40000 ALTER TABLE `dbc_review` ENABLE KEYS */;
         UNLOCK TABLES;
 
         --
@@ -788,8 +663,6 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         --
 
         DROP TABLE IF EXISTS `dbc_sessions`;
-        /*!40101 SET @saved_cs_client = @@character_set_client */;
-        /*!50503 SET character_set_client = utf8mb4 */;
         CREATE TABLE `dbc_sessions` (
         `session_id` varchar(40) NOT NULL DEFAULT '0',
         `ip_address` varchar(16) NOT NULL DEFAULT '0',
@@ -798,15 +671,12 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         `user_data` text NOT NULL,
         PRIMARY KEY (`session_id`)
         ) ENGINE=InnoDB DEFAULT
-        /*!40101 SET character_set_client = @saved_cs_client */;
 
         --
         -- Dumping data for table `dbc_sessions`
         --
 
         LOCK TABLES `dbc_sessions` WRITE;
-        /*!40000 ALTER TABLE `dbc_sessions` DISABLE KEYS */;
-        /*!40000 ALTER TABLE `dbc_sessions` ENABLE KEYS */;
         UNLOCK TABLES;
 
         --
@@ -814,8 +684,6 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         --
 
         DROP TABLE IF EXISTS `dbc_slider`;
-        /*!40101 SET @saved_cs_client = @@character_set_client */;
-        /*!50503 SET character_set_client = utf8mb4 */;
         CREATE TABLE `dbc_slider` (
         `id` int NOT NULL AUTO_INCREMENT,
         `slide_order` int NOT NULL DEFAULT '0',
@@ -827,15 +695,12 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         `status` int NOT NULL DEFAULT '1',
         PRIMARY KEY (`id`)
         ) ENGINE=InnoDB DEFAULT
-        /*!40101 SET character_set_client = @saved_cs_client */;
 
         --
         -- Dumping data for table `dbc_slider`
         --
 
         LOCK TABLES `dbc_slider` WRITE;
-        /*!40000 ALTER TABLE `dbc_slider` DISABLE KEYS */;
-        /*!40000 ALTER TABLE `dbc_slider` ENABLE KEYS */;
         UNLOCK TABLES;
 
         --
@@ -843,8 +708,6 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         --
 
         DROP TABLE IF EXISTS `dbc_urlmetas`;
-        /*!40101 SET @saved_cs_client = @@character_set_client */;
-        /*!50503 SET character_set_client = utf8mb4 */;
         CREATE TABLE `dbc_urlmetas` (
         `id` int NOT NULL AUTO_INCREMENT,
         `original_url` text  NOT NULL,
@@ -856,17 +719,14 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         `status` int NOT NULL,
         PRIMARY KEY (`id`)
         ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT
-        /*!40101 SET character_set_client = @saved_cs_client */;
 
         --
         -- Dumping data for table `dbc_urlmetas`
         --
 
         LOCK TABLES `dbc_urlmetas` WRITE;
-        /*!40000 ALTER TABLE `dbc_urlmetas` DISABLE KEYS */;
         INSERT INTO `dbc_urlmetas` VALUES
         (1,'en/ads/54f5a06e62f7a/Indian-Food','indian-food-restaurant','','Yes',1,1600766658,1),(2,'en/show/categoryposts/4/real_estate','real-estates-near-you','','Yes',1,1600771071,1);
-        /*!40000 ALTER TABLE `dbc_urlmetas` ENABLE KEYS */;
         UNLOCK TABLES;
 
         --
@@ -874,8 +734,6 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         --
 
         DROP TABLE IF EXISTS `dbc_user_meta`;
-        /*!40101 SET @saved_cs_client = @@character_set_client */;
-        /*!50503 SET character_set_client = utf8mb4 */;
         CREATE TABLE `dbc_user_meta` (
         `id` int NOT NULL AUTO_INCREMENT,
         `user_id` int NOT NULL,
@@ -884,19 +742,16 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         `status` int NOT NULL DEFAULT '1',
         PRIMARY KEY (`id`)
         ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT
-        /*!40101 SET character_set_client = @saved_cs_client */;
 
         --
         -- Dumping data for table `dbc_user_meta`
         --
 
         LOCK TABLES `dbc_user_meta` WRITE;
-        /*!40000 ALTER TABLE `dbc_user_meta` DISABLE KEYS */;
         INSERT INTO `dbc_user_meta` VALUES
         (1,2,'company_name','rani.com',1),(2,2,'phone','893646443',1),(3,3,'company_name','',1),(4,3,'phone','',1),(5,1,'company_name','Mahanidhi
         Leads',1),(6,1,'phone','',1),(7,1,'about_me','Is
         ',1),(8,1,'fb_profile','',1),(9,1,'twitter_profile','',1),(10,1,'li_profile','',1),(11,1,'gp_profile','',1),(12,1,'hide_email',NULL,1),(13,1,'hide_phone',NULL,1);
-        /*!40000 ALTER TABLE `dbc_user_meta` ENABLE KEYS */;
         UNLOCK TABLES;
 
         --
@@ -904,8 +759,6 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         --
 
         DROP TABLE IF EXISTS `dbc_users`;
-        /*!40101 SET @saved_cs_client = @@character_set_client */;
-        /*!50503 SET character_set_client = utf8mb4 */;
         CREATE TABLE `dbc_users` (
         `id` int NOT NULL AUTO_INCREMENT,
         `user_type` int NOT NULL,
@@ -927,14 +780,12 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         `banned_till` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
         PRIMARY KEY (`id`)
         ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT
-        /*!40101 SET character_set_client = @saved_cs_client */;
 
         --
         -- Dumping data for table `dbc_users`
         --
 
         LOCK TABLES `dbc_users` WRITE;
-        /*!40000 ALTER TABLE `dbc_users` DISABLE KEYS */;
         INSERT INTO `dbc_users` VALUES
         (1,1,'Admin','Admin','male','nophoto-male.jpg','admin','admin@gmail.com','$2a$11$P4SQXCwK9V6L8e061Ibdd.02khZXNbB/1.K7pjQ63q26wOA2z2Ab2','','657061f3c1f2b','',1,'0000-00-00
         00:00:00',1,0,'0000-00-00 00:00:00','0000-00-00
@@ -942,7 +793,6 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         00:00:00',1,0,'0000-00-00 00:00:00','0000-00-00
         00:00:00'),(3,2,'Niranjan123','Imalla23','male','','niranjan','niranjan.Imalla@gmail.com','$2a$11$Kawm3s24Flx6zsyLcxk3e.T2zcOq7cJeEczzghxc8EjAxrwYB2zpS','','','656dbccebab42',0,'0000-00-00
         00:00:00',1,0,'0000-00-00 00:00:00','0000-00-00 00:00:00');
-        /*!40000 ALTER TABLE `dbc_users` ENABLE KEYS */;
         UNLOCK TABLES;
 
         --
@@ -950,24 +800,19 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         --
 
         DROP TABLE IF EXISTS `dbc_usertype`;
-        /*!40101 SET @saved_cs_client = @@character_set_client */;
-        /*!50503 SET character_set_client = utf8mb4 */;
         CREATE TABLE `dbc_usertype` (
         `id` int NOT NULL AUTO_INCREMENT,
         `name` char(20) NOT NULL,
         `status` int NOT NULL DEFAULT '1',
         PRIMARY KEY (`id`)
         ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT
-        /*!40101 SET character_set_client = @saved_cs_client */;
 
         --
         -- Dumping data for table `dbc_usertype`
         --
 
         LOCK TABLES `dbc_usertype` WRITE;
-        /*!40000 ALTER TABLE `dbc_usertype` DISABLE KEYS */;
         INSERT INTO `dbc_usertype` VALUES (1,'admin',1),(2,'business',1);
-        /*!40000 ALTER TABLE `dbc_usertype` ENABLE KEYS */;
         UNLOCK TABLES;
 
         --
@@ -975,8 +820,6 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         --
 
         DROP TABLE IF EXISTS `dbc_widgets`;
-        /*!40101 SET @saved_cs_client = @@character_set_client */;
-        /*!50503 SET character_set_client = utf8mb4 */;
         CREATE TABLE `dbc_widgets` (
         `id` int NOT NULL AUTO_INCREMENT,
         `name` char(200)  NOT NULL,
@@ -986,14 +829,12 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         `editable` int NOT NULL DEFAULT '1',
         PRIMARY KEY (`id`)
         ) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT
-        /*!40101 SET character_set_client = @saved_cs_client */;
 
         --
         -- Dumping data for table `dbc_widgets`
         --
 
         LOCK TABLES `dbc_widgets` WRITE;
-        /*!40000 ALTER TABLE `dbc_widgets` DISABLE KEYS */;
         INSERT INTO `dbc_widgets` VALUES (1,'Facebook like box','fb_likebox','',1,1),(2,'Contact
         text','contact_text','',1,1),(3,'Follow us','follow_us','',1,1),(4,'Short
         Description','short_description','',1,1),(5,'Adsense full width','adsense_full_width','',1,1),(6,'Adsense
@@ -1012,16 +853,6 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         post','article_post',NULL,1,1),(30,'News post','news_post',NULL,1,1),(31,'Category main with
         subcategories','category_main_with_subcategories',NULL,1,1),(32,'Newsletter
         sidebar','newsletter_sidebar',NULL,1,1),(33,'Similar Post','similar_post',NULL,1,1);
-        /*!40000 ALTER TABLE `dbc_widgets` ENABLE KEYS */;
         UNLOCK TABLES;
-        /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-
-        /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-        /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-        /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-        /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-        /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-        /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-        /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
         -- Dump completed on 2023-12-17 12:14:59
