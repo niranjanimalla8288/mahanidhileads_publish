@@ -6,7 +6,7 @@ DROP TABLE IF EXISTS `dbc_amenities`;
 CREATE TABLE `dbc_amenities` (
 `id` int NOT NULL AUTO_INCREMENT,
 `category_id` int DEFAULT '0',
-`options` text CHARACTER SET utf8mb3 ,
+`options` text  ,
 `status` int NOT NULL DEFAULT '1',
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT
@@ -33,8 +33,8 @@ CREATE TABLE `dbc_blog` (
 `id` int NOT NULL AUTO_INCREMENT,
 `type` char(30) NOT NULL,
 `featured_img` char(200) NOT NULL,
-`title` longtext CHARACTER SET utf8mb3 NOT NULL,
-`description` longtext CHARACTER SET utf8mb3 NOT NULL,
+`title` longtext  NOT NULL,
+`description` longtext  NOT NULL,
 `created_by` int NOT NULL,
 `create_time` int NOT NULL,
 `status` int NOT NULL DEFAULT '1',
@@ -61,8 +61,8 @@ DROP TABLE IF EXISTS `dbc_blog_meta`;
 CREATE TABLE `dbc_blog_meta` (
 `id` int NOT NULL AUTO_INCREMENT,
 `blog_id` int NOT NULL,
-`key` char(50) CHARACTER SET utf8mb3 NOT NULL,
-`value` text CHARACTER SET utf8mb3 NOT NULL,
+`key` char(50)  NOT NULL,
+`value` text  NOT NULL,
 `status` int NOT NULL DEFAULT '1',
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT
@@ -87,9 +87,9 @@ DROP TABLE IF EXISTS `dbc_categories`;
 CREATE TABLE `dbc_categories` (
 `id` int NOT NULL AUTO_INCREMENT,
 `parent` int NOT NULL DEFAULT '0',
-`title` char(100) CHARACTER SET utf8mb3 NOT NULL,
-`fa_icon` char(20) CHARACTER SET utf8mb3 NOT NULL,
-`featured_img` char(200) CHARACTER SET utf8mb3 NOT NULL,
+`title` char(100)  NOT NULL,
+`fa_icon` char(20)  NOT NULL,
+`featured_img` char(200)  NOT NULL,
 `show_menu` tinyint(1) NOT NULL DEFAULT '0',
 `created_by` int NOT NULL,
 `create_time` int NOT NULL,
@@ -121,12 +121,12 @@ DROP TABLE IF EXISTS `dbc_customfields`;
 CREATE TABLE `dbc_customfields` (
 `id` int NOT NULL AUTO_INCREMENT,
 `category_id` int DEFAULT '0',
-`fieldname` char(25) CHARACTER SET utf8mb3 DEFAULT NULL,
-`fieldtitle` char(100) CHARACTER SET utf8mb3 DEFAULT NULL,
-`type` char(25) CHARACTER SET utf8mb3 DEFAULT NULL,
-`options` text CHARACTER SET utf8mb3 ,
+`fieldname` char(25)  DEFAULT NULL,
+`fieldtitle` char(100)  DEFAULT NULL,
+`type` char(25)  DEFAULT NULL,
+`options` text  ,
 `is_required` int NOT NULL DEFAULT '0',
-`help_text` text CHARACTER SET utf8mb3 ,
+`help_text` text  ,
 `show_in_detail` int NOT NULL DEFAULT '0',
 `show_in_search` int NOT NULL DEFAULT '0',
 `sort_order` int NOT NULL DEFAULT '0',
@@ -153,8 +153,8 @@ DROP TABLE IF EXISTS `dbc_emailtmpl`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_emailtmpl` (
 `id` int NOT NULL AUTO_INCREMENT,
-`email_name` char(100) CHARACTER SET utf8mb3 NOT NULL,
-`values` text CHARACTER SET utf8mb3 NOT NULL,
+`email_name` char(100)  NOT NULL,
+`values` text  NOT NULL,
 `status` int NOT NULL,
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT
@@ -248,10 +248,10 @@ CREATE TABLE `dbc_locations` (
 `id` int NOT NULL AUTO_INCREMENT,
 `parent` int NOT NULL,
 `parent_country` int NOT NULL,
-`name` char(200) CHARACTER SET utf8mb3 NOT NULL,
-`type` char(10) CHARACTER SET utf8mb3 NOT NULL,
+`name` char(200)  NOT NULL,
+`type` char(10)  NOT NULL,
 `status` int NOT NULL DEFAULT '1',
-`photo` char(200) CHARACTER SET utf8mb3 NOT NULL,
+`photo` char(200)  NOT NULL,
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -276,8 +276,8 @@ DROP TABLE IF EXISTS `dbc_media`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_media` (
 `id` int NOT NULL AUTO_INCREMENT,
-`media_name` char(255) CHARACTER SET utf8mb3 NOT NULL,
-`media_url` mediumtext CHARACTER SET utf8mb3 NOT NULL,
+`media_name` char(255)  NOT NULL,
+`media_url` mediumtext  NOT NULL,
 `create_time` datetime NOT NULL,
 `created_by` int NOT NULL,
 `status` int NOT NULL,
@@ -306,9 +306,9 @@ CREATE TABLE `dbc_messaging` (
 `sender` int NOT NULL,
 `reciever` int NOT NULL,
 `last_activity` int NOT NULL,
-`last_viewed` text CHARACTER SET utf8mb3 ,
+`last_viewed` text  ,
 `status` int NOT NULL DEFAULT '1',
-`content` longtext CHARACTER SET utf8mb3 ,
+`content` longtext  ,
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -332,9 +332,9 @@ DROP TABLE IF EXISTS `dbc_offers`;
 CREATE TABLE `dbc_offers` (
 `id` int NOT NULL AUTO_INCREMENT,
 `post_id` int NOT NULL,
-`title` text CHARACTER SET utf8mb3 ,
-`description` longtext CHARACTER SET utf8mb3 ,
-`featured_img` char(255) CHARACTER SET utf8mb3 NOT NULL,
+`title` text  ,
+`description` longtext  ,
+`featured_img` char(255)  NOT NULL,
 `has_time_limit` int NOT NULL DEFAULT '1',
 `activation_date` int DEFAULT NULL,
 `expirtion_date` int DEFAULT NULL,
@@ -365,8 +365,8 @@ DROP TABLE IF EXISTS `dbc_options`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_options` (
 `id` int NOT NULL AUTO_INCREMENT,
-`key` char(255) CHARACTER SET utf8mb3 NOT NULL,
-`values` text CHARACTER SET utf8mb3 NOT NULL,
+`key` char(255)  NOT NULL,
+`values` text  NOT NULL,
 `status` int NOT NULL DEFAULT '1',
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT
@@ -407,9 +407,9 @@ DROP TABLE IF EXISTS `dbc_packages`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_packages` (
 `id` int NOT NULL AUTO_INCREMENT,
-`type` char(20) CHARACTER SET utf8mb3 NOT NULL DEFAULT 'post_package',
-`title` varchar(300) CHARACTER SET utf8mb3 NOT NULL,
-`description` text CHARACTER SET utf8mb3 NOT NULL,
+`type` char(20)  NOT NULL DEFAULT 'post_package',
+`title` varchar(300)  NOT NULL,
+`description` text  NOT NULL,
 `price` decimal(11,2) NOT NULL,
 `expiration_time` int NOT NULL,
 `featured_expiration_time` int NOT NULL DEFAULT '0',
@@ -448,15 +448,15 @@ DROP TABLE IF EXISTS `dbc_pages`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_pages` (
 `id` int NOT NULL AUTO_INCREMENT,
-`alias` char(50) CHARACTER SET utf8mb3 NOT NULL,
+`alias` char(50)  NOT NULL,
 `show_in_menu` int NOT NULL DEFAULT '1',
 `layout` int NOT NULL,
-`content_from` char(10) CHARACTER SET utf8mb3 NOT NULL DEFAULT 'Manual',
-`title` text CHARACTER SET utf8mb3 NOT NULL,
-`url` char(150) CHARACTER SET utf8mb3 NOT NULL,
-`content` longtext CHARACTER SET utf8mb3 NOT NULL,
-`sidebar` longtext CHARACTER SET utf8mb3 NOT NULL,
-`seo_settings` text CHARACTER SET utf8mb3 NOT NULL,
+`content_from` char(10)  NOT NULL DEFAULT 'Manual',
+`title` text  NOT NULL,
+`url` char(150)  NOT NULL,
+`content` longtext  NOT NULL,
+`sidebar` longtext  NOT NULL,
+`seo_settings` text  NOT NULL,
 `create_time` int NOT NULL DEFAULT '0',
 `status` int NOT NULL DEFAULT '1',
 `editable` int NOT NULL DEFAULT '1',
@@ -599,8 +599,8 @@ DROP TABLE IF EXISTS `dbc_post_meta`;
 CREATE TABLE `dbc_post_meta` (
 `id` int NOT NULL AUTO_INCREMENT,
 `post_id` int NOT NULL,
-`key` char(50) CHARACTER SET utf8mb3 NOT NULL,
-`value` text CHARACTER SET utf8mb3 ,
+`key` char(50)  NOT NULL,
+`value` text  ,
 `status` int NOT NULL DEFAULT '1',
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=49 DEFAULT
@@ -635,9 +635,9 @@ CREATE TABLE `dbc_post_package` (
 `expiration_date` date DEFAULT NULL,
 `is_active` int NOT NULL COMMENT '0=no,2=pending,1=active',
 `status` int NOT NULL COMMENT '0=deleted,1=active',
-`payment_medium` char(20) CHARACTER SET utf8mb3 NOT NULL DEFAULT 'paypal',
-`payment_type` varchar(50) CHARACTER SET utf8mb3 NOT NULL DEFAULT 'post',
-`response_log` text CHARACTER SET utf8mb3 ,
+`payment_medium` char(20)  NOT NULL DEFAULT 'paypal',
+`payment_type` varchar(50)  NOT NULL DEFAULT 'post',
+`response_log` text  ,
 PRIMARY KEY (`id`),
 UNIQUE KEY `unique_id` (`unique_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT
@@ -668,31 +668,31 @@ DROP TABLE IF EXISTS `dbc_posts`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `dbc_posts` (
 `id` int NOT NULL AUTO_INCREMENT,
-`unique_id` char(100) CHARACTER SET utf8mb3 NOT NULL,
-`title` text CHARACTER SET utf8mb3 ,
-`description` longtext CHARACTER SET utf8mb3 ,
-`tags` text CHARACTER SET utf8mb3 ,
+`unique_id` char(100)  NOT NULL,
+`title` text  ,
+`description` longtext  ,
+`tags` text  ,
 `rating` decimal(2,1) NOT NULL DEFAULT '0.0',
 `category` text,
 `parent_category` text,
-`price_range` char(200) CHARACTER SET utf8mb3 DEFAULT NULL,
-`address` longtext CHARACTER SET utf8mb3 NOT NULL,
-`phone_no` char(50) CHARACTER SET utf8mb3 DEFAULT NULL,
-`website` char(200) CHARACTER SET utf8mb3 DEFAULT NULL,
-`founded` char(20) CHARACTER SET utf8mb3 DEFAULT NULL,
-`email` char(100) CHARACTER SET utf8mb3 DEFAULT NULL,
+`price_range` char(200)  DEFAULT NULL,
+`address` longtext  NOT NULL,
+`phone_no` char(50)  DEFAULT NULL,
+`website` char(200)  DEFAULT NULL,
+`founded` char(20)  DEFAULT NULL,
+`email` char(100)  DEFAULT NULL,
 `country` int NOT NULL,
 `state` int NOT NULL,
 `city` int NOT NULL,
 `zip_code` char(15) NOT NULL,
 `latitude` decimal(11,8) NOT NULL,
 `longitude` decimal(11,8) NOT NULL,
-`featured_img` char(255) CHARACTER SET utf8mb3 NOT NULL,
-`video_url` char(200) CHARACTER SET utf8mb3 DEFAULT NULL,
-`gallery` text CHARACTER SET utf8mb3 ,
-`opening_hour` text CHARACTER SET utf8mb3 ,
-`additional_features` text CHARACTER SET utf8mb3 ,
-`food_menu` text CHARACTER SET utf8mb3 ,
+`featured_img` char(255)  NOT NULL,
+`video_url` char(200)  DEFAULT NULL,
+`gallery` text  ,
+`opening_hour` text  ,
+`additional_features` text  ,
+`food_menu` text  ,
 `created_by` int NOT NULL,
 `create_time` int NOT NULL DEFAULT '0',
 `publish_time` int NOT NULL DEFAULT '0',
@@ -704,7 +704,7 @@ CREATE TABLE `dbc_posts` (
 `featured_expiration_date` date DEFAULT NULL,
 `report` int NOT NULL DEFAULT '0',
 `total_view` int NOT NULL DEFAULT '0',
-`search_meta` text CHARACTER SET utf8mb3 ,
+`search_meta` text  ,
 PRIMARY KEY (`id`),
 UNIQUE KEY `unique_id` (`unique_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT
@@ -764,7 +764,7 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         /*!50503 SET character_set_client = utf8mb4 */;
         CREATE TABLE `dbc_review` (
         `id` int NOT NULL AUTO_INCREMENT,
-        `comment` text CHARACTER SET utf8mb3 ,
+        `comment` text  ,
         `rating` int NOT NULL DEFAULT '0',
         `post_id` int NOT NULL DEFAULT '0',
         `created_by` int NOT NULL DEFAULT '0',
@@ -820,8 +820,8 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         `id` int NOT NULL AUTO_INCREMENT,
         `slide_order` int NOT NULL DEFAULT '0',
         `featured_img` char(200) NOT NULL,
-        `title` char(200) CHARACTER SET utf8mb3 NOT NULL,
-        `description` longtext CHARACTER SET utf8mb3 NOT NULL,
+        `title` char(200)  NOT NULL,
+        `description` longtext  NOT NULL,
         `created_by` int NOT NULL,
         `create_time` int NOT NULL,
         `status` int NOT NULL DEFAULT '1',
@@ -847,9 +847,9 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         /*!50503 SET character_set_client = utf8mb4 */;
         CREATE TABLE `dbc_urlmetas` (
         `id` int NOT NULL AUTO_INCREMENT,
-        `original_url` text CHARACTER SET utf8mb3 NOT NULL,
-        `custom_url` text CHARACTER SET utf8mb3 NOT NULL,
-        `meta_tags` text CHARACTER SET utf8mb3 NOT NULL,
+        `original_url` text  NOT NULL,
+        `custom_url` text  NOT NULL,
+        `meta_tags` text  NOT NULL,
         `append` char(3) NOT NULL DEFAULT 'Yes',
         `created_by` int NOT NULL,
         `create_time` int NOT NULL,
@@ -879,8 +879,8 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         CREATE TABLE `dbc_user_meta` (
         `id` int NOT NULL AUTO_INCREMENT,
         `user_id` int NOT NULL,
-        `key` char(30) CHARACTER SET utf8mb3 NOT NULL,
-        `value` text CHARACTER SET utf8mb3 ,
+        `key` char(30)  NOT NULL,
+        `value` text  ,
         `status` int NOT NULL DEFAULT '1',
         PRIMARY KEY (`id`)
         ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT
@@ -909,16 +909,16 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         CREATE TABLE `dbc_users` (
         `id` int NOT NULL AUTO_INCREMENT,
         `user_type` int NOT NULL,
-        `first_name` char(40) CHARACTER SET utf8mb3 NOT NULL DEFAULT '',
-        `last_name` char(40) CHARACTER SET utf8mb3 NOT NULL DEFAULT '',
-        `gender` char(10) CHARACTER SET utf8mb3 NOT NULL DEFAULT '',
-        `profile_photo` char(200) CHARACTER SET utf8mb3 NOT NULL DEFAULT '',
-        `user_name` char(100) CHARACTER SET utf8mb3 NOT NULL,
-        `user_email` char(100) CHARACTER SET utf8mb3 NOT NULL,
-        `password` char(255) CHARACTER SET utf8mb3 NOT NULL,
-        `remember_me_key` char(255) CHARACTER SET utf8mb3 NOT NULL DEFAULT '',
-        `recovery_key` char(255) CHARACTER SET utf8mb3 NOT NULL DEFAULT '',
-        `confirmation_key` char(30) CHARACTER SET utf8mb3 NOT NULL DEFAULT '',
+        `first_name` char(40)  NOT NULL DEFAULT '',
+        `last_name` char(40)  NOT NULL DEFAULT '',
+        `gender` char(10)  NOT NULL DEFAULT '',
+        `profile_photo` char(200)  NOT NULL DEFAULT '',
+        `user_name` char(100)  NOT NULL,
+        `user_email` char(100)  NOT NULL,
+        `password` char(255)  NOT NULL,
+        `remember_me_key` char(255)  NOT NULL DEFAULT '',
+        `recovery_key` char(255)  NOT NULL DEFAULT '',
+        `confirmation_key` char(30)  NOT NULL DEFAULT '',
         `confirmed` int NOT NULL DEFAULT '1',
         `confirmed_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
         `status` int NOT NULL DEFAULT '0',
@@ -979,9 +979,9 @@ elctrnics '),(5,'657c45b9776d7','{\"en\":\"Some Good Toy Company\"}','{\"en\":\"
         /*!50503 SET character_set_client = utf8mb4 */;
         CREATE TABLE `dbc_widgets` (
         `id` int NOT NULL AUTO_INCREMENT,
-        `name` char(200) CHARACTER SET utf8mb3 NOT NULL,
-        `alias` char(200) CHARACTER SET utf8mb3 NOT NULL,
-        `params` text CHARACTER SET utf8mb3 ,
+        `name` char(200)  NOT NULL,
+        `alias` char(200)  NOT NULL,
+        `params` text  ,
         `status` int NOT NULL,
         `editable` int NOT NULL DEFAULT '1',
         PRIMARY KEY (`id`)
