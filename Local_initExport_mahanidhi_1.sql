@@ -1,5 +1,4 @@
 
-use mahanidhi_db;
 --
 -- Table structure for table `dbc_amenities`
 --
@@ -157,30 +156,6 @@ CREATE TABLE `dbc_emailtmpl` (
 INSERT INTO `dbc_emailtmpl` VALUES (1,'confirmation_email','{\"subject\":\"Confirmation email\",\"body\":\"Hi #username,\\r\\nYour signup is successful. Please follow the below link for activating your account:\\r\\n \\r\\n#activationlink\\r\\n\\t\\t\\t\\t\\t\\t\\t\\t\\t\\t\\r\\nThanks\\r\\n#webadmin\",\"avl_vars\":\"#username,#useremail,#activationlink,#webadmin\"}',1),(2,'recovery_email','{\"subject\":\"Recovery email\",\"body\":\"Hi #username,\\r\\nWe have received an account recovery request from your email. Please follow the below link for setting new password \\r\\n\\r\\n#recoverylink\\r\\n\\r\\nThanks\\r\\n#webadmin\",\"avl_vars\":\"#username,#recoverylink,#webadmin\"}',1),(3,'payment_confirmation_email','{\"subject\":\"Confirmation email\",\"body\":\"Hi #username,\\r\\nYou decided to make a payment. You can resume the payment from the following link\\r\\n\\r\\n#resumelink\\r\\n\\r\\nThanks\\r\\n#webadmin\",\"avl_vars\":\"#username,#resumelink,#webadmin\"}',1),(4,'post_expiration_notification','{\"subject\":\"Post expiration notification\",\"body\":\"Dear user \\r\\nOne or more of your posts are going to be expired within #no_of_days days. If you want to renew them then please follow the below link \\r\\n\\r\\n#all_posts_link\\r\\n\\r\\nThanks\\r\\n#webadmin\",\"avl_vars\":\"#no_of_days,#all_posts_link,#webadmin\"}',1),(5,'post_published_email','{\"subject\":\"Post approval notification\",\"body\":\"Dear #username \\r\\nYour post has been published\\r\\n\\r\\n#post_link\\r\\n\\r\\nThanks\\r\\n#webadmin\",\"avl_vars\":\"#username,#post_link,#webadmin\"}',1);
 /*!40000 ALTER TABLE `dbc_emailtmpl` ENABLE KEYS */;
 
---
--- Table structure for table `dbc_featuredproducts`
---
-
-DROP TABLE IF EXISTS `dbc_featuredproducts`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `dbc_featuredproducts` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `FP_Title` varchar(30) DEFAULT NULL,
-  `FP_Description` varchar(30) DEFAULT NULL,
-  `FP_Price` int DEFAULT NULL,
-  `FP_ImageId` int DEFAULT NULL,
-  `create_time` datetime DEFAULT NULL,
-  `created_by` int DEFAULT NULL,
-  PRIMARY KEY (`Id`),
-  KEY `FP_ImageId` (`FP_ImageId`),
-  CONSTRAINT `dbc_featuredproducts_ibfk_1` FOREIGN KEY (`FP_ImageId`) REFERENCES `dbc_featuredproductsimage` (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dbc_featuredproducts`
---
 
 /*!40000 ALTER TABLE `dbc_featuredproducts` DISABLE KEYS */;
 /*!40000 ALTER TABLE `dbc_featuredproducts` ENABLE KEYS */;
@@ -207,6 +182,31 @@ CREATE TABLE `dbc_featuredproductsimage` (
 
 /*!40000 ALTER TABLE `dbc_featuredproductsimage` DISABLE KEYS */;
 /*!40000 ALTER TABLE `dbc_featuredproductsimage` ENABLE KEYS */;
+
+--
+-- Table structure for table `dbc_featuredproducts`
+--
+
+DROP TABLE IF EXISTS `dbc_featuredproducts`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `dbc_featuredproducts` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `FP_Title` varchar(30) DEFAULT NULL,
+  `FP_Description` varchar(30) DEFAULT NULL,
+  `FP_Price` int DEFAULT NULL,
+  `FP_ImageId` int DEFAULT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `created_by` int DEFAULT NULL,
+  PRIMARY KEY (`Id`),
+  KEY `FP_ImageId` (`FP_ImageId`),
+  CONSTRAINT `dbc_featuredproducts_ibfk_1` FOREIGN KEY (`FP_ImageId`) REFERENCES `dbc_featuredproductsimage` (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dbc_featuredproducts`
+--
 
 --
 -- Table structure for table `dbc_locations`
@@ -752,6 +752,3 @@ INSERT INTO `dbc_widgets` VALUES (1,'Facebook like box','fb_likebox','',1,1),(2,
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2023-12-17 13:52:08
-
-
-
