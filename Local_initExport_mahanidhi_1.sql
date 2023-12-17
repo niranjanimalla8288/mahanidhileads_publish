@@ -1,4 +1,4 @@
-use mahanidhi_db;
+
 --
 -- Table structure for table `dbc_amenities`
 --
@@ -157,31 +157,6 @@ INSERT INTO `dbc_emailtmpl` VALUES (1,'confirmation_email','{\"subject\":\"Confi
 /*!40000 ALTER TABLE `dbc_emailtmpl` ENABLE KEYS */;
 
 
-/*!40000 ALTER TABLE `dbc_featuredproducts` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dbc_featuredproducts` ENABLE KEYS */;
-
---
--- Table structure for table `dbc_featuredproductsimage`
---
-
-DROP TABLE IF EXISTS `dbc_featuredproductsimage`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `dbc_featuredproductsimage` (
-  `Id` int NOT NULL AUTO_INCREMENT,
-  `Image` mediumtext,
-  `create_time` datetime DEFAULT NULL,
-  `created_by` int DEFAULT NULL,
-  PRIMARY KEY (`Id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `dbc_featuredproductsimage`
---
-
-/*!40000 ALTER TABLE `dbc_featuredproductsimage` DISABLE KEYS */;
-/*!40000 ALTER TABLE `dbc_featuredproductsimage` ENABLE KEYS */;
 
 --
 -- Table structure for table `dbc_featuredproducts`
@@ -207,6 +182,35 @@ CREATE TABLE `dbc_featuredproducts` (
 --
 -- Dumping data for table `dbc_featuredproducts`
 --
+
+/*!40000 ALTER TABLE `dbc_featuredproducts` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dbc_featuredproducts` ENABLE KEYS */;
+
+
+
+--
+-- Table structure for table `dbc_featuredproductsimage`
+--
+
+DROP TABLE IF EXISTS `dbc_featuredproductsimage`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `dbc_featuredproductsimage` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `Image` mediumtext,
+  `create_time` datetime DEFAULT NULL,
+  `created_by` int DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dbc_featuredproductsimage`
+--
+
+/*!40000 ALTER TABLE `dbc_featuredproductsimage` DISABLE KEYS */;
+/*!40000 ALTER TABLE `dbc_featuredproductsimage` ENABLE KEYS */;
+
 
 --
 -- Table structure for table `dbc_locations`
